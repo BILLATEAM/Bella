@@ -1,10 +1,10 @@
-#!/usr/bin/env bash/r
+#!/usr/bin/env bash
 cd $HOME/BILLA
 rm -rf $HOME/.telegram-cli
 install() {
 rm -rf $HOME/.telegram-cli
 sudo chmod +x tg
-chmod +xBILLA
+chmod +x BILLA
 chmod +x Run
 ./Run
 }

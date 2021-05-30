@@ -3,7 +3,7 @@ cd $HOME/BILLA
 install() {
 rm -rf $HOME/.telegram-cli
 sudo chmod +x tg
-chmod +xBILLA
+chmod +x BILLA
 chmod +x Run
 ./Run
 }

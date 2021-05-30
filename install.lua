@@ -69,7 +69,7 @@ RunBot:write([[
 #!/usr/bin/env bash
 cd $HOME/BILLA
 token="]]..database:get(Server_Done.."Token_Write")..[["
-rm -frBILLA.lua
+rm -fr BILLA.lua
 wget "https://raw.githubusercontent.com/BILLASR/BILLA/main/BILLA.lua"
 while(true) do
 rm -fr ../.telegram-cli
@@ -83,8 +83,8 @@ RunTs:write([[
 cd $HOME/BILLA
 while(true) do
 rm -fr ../.telegram-cli
-screen -SBILLA -X kill
-screen -SBILLA ./BILLA
+screen -S BILLA -X kill
+screen -S BILLA ./BILLA
 done
 ]])
 RunTs:close()
